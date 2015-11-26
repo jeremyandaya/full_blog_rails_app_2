@@ -1,0 +1,13 @@
+<div>
+	<p>
+		Comment: <%= comment.comment %>
+	</p>
+	<p>
+		by: <%= comment.user.email %>
+	</p>
+	<p>
+		<%= link_to "Edit", edit_post_comment_path(comment.post, comment), class: "myButton" %>
+		<%= link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" }, class: "myButton" %>
+	</p>
+	<hr>
+</div>

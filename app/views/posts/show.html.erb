@@ -1,0 +1,21 @@
+<h1><%= @post.title %></h1>
+<h4>by: <%= @post.user.email %></h4>
+<p><%= @post.content %></p>
+<p>
+	<%= link_to "Edit", edit_post_path(@post), class: "myButton" %>
+	<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "myButton" %>
+</p>
+<hr>
+
+<h2>Comments (<%= @post.comments.count %>)</h2>
+<%= render @post.comments %>
+
+
+<h3>Reply to thread</h3>
+<%= render 'comments/form' %>
+<br>
+<hr>
+<br>
+<br>
+<br>
+
